@@ -4,6 +4,7 @@ const container = document.querySelector(".container");
 const about = document.querySelector(".about");
 const navcontainer = document.querySelector(".nav");
 const separator = document.querySelector(".separator");
+const wrapContact = document.querySelector(".wrap-contact");
 
 // Load the mode from localStorage on page load
 const savedMode = localStorage.getItem("darkMode");
@@ -16,6 +17,7 @@ changeMode.addEventListener("click", () => {
   navcontainer.classList.toggle("dark");
   about.classList.toggle("dark");
   separator.classList.toggle("dark");
+  wrapContact.classList.toggle("dark");
 
   // Save the mode to localStorage
   if (container.classList.contains("dark")) {
@@ -32,14 +34,14 @@ function activateDarkMode() {
   navcontainer.classList.add("dark");
   about.classList.add("dark");
   separator.classList.add("dark");
+  wrapContact.classList.add("dark");
   modeIcon.classList.replace("fa-moon", "fa-sun");
 }
 
 // Text change logic
 const textElement = document.getElementById("developer-role");
 const texts = [
-  "MERN Stack Developer",
-  "Full Stack Developer",
+  "Full Stack Developer (MERN Stack)",
   "CS Graduate & Aspiring Master's Candidate in MCA",
 ];
 let index = 0;

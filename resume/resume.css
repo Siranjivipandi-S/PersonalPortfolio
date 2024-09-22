@@ -62,6 +62,10 @@ nav > ul > li > a {
 nav.dark > ul > li > a {
   color: #ecf0f1;
 }
+#mail {
+  text-decoration: none;
+  color: #ecf0f1;
+}
 
 nav > ul > li > a:hover {
   color: #f1f1f1;
@@ -76,6 +80,9 @@ a::before {
   background-color: #fff;
   transform: scaleX(0);
   transition: transform 0.4s ease-in-out;
+}
+#mail {
+  color: black;
 }
 
 nav > ul > li > a:hover::before {
@@ -117,8 +124,11 @@ body {
   background: linear-gradient(#e0eaf3, #cfdef3);
   border-radius: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  user-select: none;
 }
-
+.portfolio-container.dark #mail {
+  color: white;
+}
 .portfolio-container.dark {
   background: linear-gradient(
     rgb(27, 27, 27),
@@ -233,6 +243,7 @@ span {
   justify-content: space-around;
   background-color: white;
   border-radius: 20px;
+  user-select: none;
   height: 500px;
   width: 70%;
   padding: 20px;
@@ -242,9 +253,18 @@ span {
   height: 250px;
   width: 250px;
   opacity: 0;
+  margin-top: 40px;
+  mix-blend-mode: multiply;
+  background: transparent;
+  margin-left: 10px;
   transform: translateY(20px) translateZ(100px);
-
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.imagepart-contact > img:hover {
+  opacity: 1;
+  transform: translateY(0) scale(1.1);
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
 }
 
 .imagepart-contact > img.show {
@@ -253,7 +273,12 @@ span {
 }
 
 .wrap-contact.dark {
-  background: linear-gradient(black, rgb(102, 101, 101), black);
+  background: rgba(49, 44, 44, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   color: white;
 }
 
@@ -261,6 +286,9 @@ span {
 .wrap-contact.dark .contact-btn {
   background-color: #333;
   color: white;
+}
+.wrap-contact.dark .contact-btn:hover {
+  background-color: #3e3d3d;
 }
 
 .wrap-contact.dark p {
@@ -300,11 +328,20 @@ span {
   height: 30px;
   width: 300px;
   border: none;
-  border: 2px solid whitesmoke;
-  border-radius: 10px;
+  border-bottom: 2px solid rgb(230, 155, 205);
+  /* border-radius: 10px; */
   caret-color: purple;
   font-size: 16px;
-  padding: 8px 10px;
+  outline: none;
+  padding: 18px 15px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+}
+.wrap-contact #email-contact,
+#name-contact,
+#message-contact {
+  background: transparent;
 }
 
 textarea#message-contact {
