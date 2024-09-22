@@ -43,3 +43,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   observer.observe(img);
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const resumeLink = document.querySelector('a[href="./resume/resume.html"]');
+
+  if (window.location.pathname.includes("resume.html")) {
+    resumeLink.addEventListener("click", (event) => {
+      event.preventDefault(); // Prevent navigation if already on the resume page
+    });
+    resumeLink.style.cursor = "default"; // Change cursor to indicate it's inactive
+  }
+});
